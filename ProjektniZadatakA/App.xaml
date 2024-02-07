@@ -1,0 +1,176 @@
+﻿<Application x:Class="ProjektniZadatakA.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ProjektniZadatakA"
+             xmlns:properties="clr-namespace:ProjektniZadatakA.Properties"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <Style TargetType="{x:Type Grid}" x:Key="GridStyle">
+            <Style.Triggers>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="C:\Users\WIN10\source\repos\ProjektniZadatakA\ProjektniZadatakA\images\background3.jpg"></ImageBrush>
+                        </Setter.Value>
+                    </Setter>
+                    
+                    <!-- <Setter Property="Foreground" Value="Red"></Setter>-->
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Background" >
+                        <Setter.Value>
+                        <ImageBrush ImageSource="C:\Users\WIN10\source\repos\ProjektniZadatakA\ProjektniZadatakA\images\background2.jpg"></ImageBrush>
+                        </Setter.Value>
+                    </Setter>
+                    <!--<Setter Property="Foreground" Value="Purple"></Setter>-->
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="C:\Users\WIN10\source\repos\ProjektniZadatakA\ProjektniZadatakA\images\background1.jpeg"></ImageBrush>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type DataGridRow}">
+            <Style.Triggers>
+                
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
+                    <Setter Property="Margin" Value="0,0,0,2"></Setter>
+                    <Setter Property="Background" Value="#1a3d21"></Setter>
+                    <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                    <!-- <Setter Property="Foreground" Value="Red"></Setter>-->
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Margin" Value="0,0,0,2"></Setter>
+                    <Setter Property="Background" Value="#636363"></Setter>
+                    <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                    <!--<Setter Property="Foreground" Value="Purple"></Setter>-->
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                    <Setter Property="Margin" Value="0,0,0,2"></Setter>
+                    <Setter Property="Background" Value="White"></Setter>
+                    <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                    <!--<Setter Property="Foreground" Value="Purple"></Setter>-->
+                </DataTrigger>
+
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Style.Triggers>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
+                    <Setter Property="Background" Value="#0e7d3f"></Setter>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Background" Value="#f3ea1c"></Setter>
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                    <Setter Property="Background" Value="#939598"></Setter>
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                </DataTrigger>
+                
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Style.Triggers>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
+                    
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+              
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                </DataTrigger>
+
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type TabItem}">
+            <Style.Triggers>
+                
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
+                    <Setter Property="Background" Value="#0e7d3f"></Setter>
+                    
+                    </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Background" Value="#f3ea1c"></Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                    <Setter Property="Background" Value="#939598"></Setter>
+                
+                </DataTrigger>
+
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
+                    
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                </DataTrigger>
+
+                <!--regija dark-->
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                    
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                </DataTrigger>
+            </Style.Triggers>
+            
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Style.Triggers>
+
+                <!--regija black-->
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Black">
+                    <Setter Property="Background" Value="#0e7d3f"></Setter>
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                </DataTrigger>
+
+                <!--regija dark-->
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Dark">
+                    <Setter Property="Background" Value="#f3ea1c"></Setter>
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default}, Path=ColorMode}" Value="Light">
+                    <Setter Property="Background" Value="#939598"></Setter>
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                </DataTrigger>
+
+            </Style.Triggers>
+        </Style>
+        
+        
+            
+    </Application.Resources>
+    
+</Application>

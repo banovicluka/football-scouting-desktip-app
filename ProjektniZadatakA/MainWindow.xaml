@@ -1,0 +1,28 @@
+﻿<Window x:Class="ProjektniZadatakA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektniZadatakA"
+        xmlns:language="clr-namespace:ProjektniZadatakA.Properties.Langs"
+        mc:Ignorable="d"
+        Title="Prijava na sistem" Height="400" Width="450">
+    <Grid Background="white">
+     <!--   <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\WIN10\source\repos\ProjektniZadatakA\ProjektniZadatakA\images\pocetna.png"></ImageBrush>
+        </Grid.Background>-->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="10,0,10,10">
+            <Image Margin="0,20,0,0"  Source="C:\Users\WIN10\source\repos\ProjektniZadatakA\ProjektniZadatakA\images\logo scout.png" Height="158" Width="290"></Image>
+            <Label Margin="50,5,50,0" BorderBrush="Transparent" FontFamily="Lato" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Center" Content="{x:Static language:Language1.login_to_the_system}"></Label>
+            <TextBox Name="usernameBox" FontFamily="Lato"  Text="dgasic" Width="160" HorizontalContentAlignment="Left" BorderThickness="3" Margin="10">
+            </TextBox>
+            <PasswordBox Name="passwordBox"  Password="darko" Margin="10" Width="160" BorderThickness="2"></PasswordBox>
+            <Button Name="loginButton" BorderThickness="2" Background="Transparent" Foreground="White" Width="100" Height="30" Click="loginButton_Click" FontFamily="Lato" Content="Prijavi se" Margin="10,10,10,0"></Button>
+            <Label Name="infoLabel" FontFamily="Lato" Foreground="White" Width="160"></Label>
+        </StackPanel>
+        <ComboBox Name="cmb" HorizontalAlignment="Left" Height="25" Width="100" VerticalAlignment="Bottom" Margin="10" Text="Jezik"  SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="{x:Static language:Language1.english}"></ComboBoxItem>
+            <ComboBoxItem Content="{x:Static language:Language1.serbian}"></ComboBoxItem>
+        </ComboBox>
+    </Grid>
+</Window>

@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="add match" xml:space="preserve">
+    <value>Add match</value>
+  </data>
+  <data name="add scout" xml:space="preserve">
+    <value>Add scout</value>
+  </data>
+  <data name="age" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="city" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="competition" xml:space="preserve">
+    <value>Competition:</value>
+  </data>
+  <data name="complete_review" xml:space="preserve">
+    <value>Complete review</value>
+  </data>
+  <data name="conclusion" xml:space="preserve">
+    <value>Conclusion:</value>
+  </data>
+  <data name="country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="date_of_match" xml:space="preserve">
+    <value>Date of match:</value>
+  </data>
+  <data name="english" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="finaly_grade" xml:space="preserve">
+    <value>Finaly grade</value>
+  </data>
+  <data name="foot" xml:space="preserve">
+    <value>Foot</value>
+  </data>
+  <data name="guest" xml:space="preserve">
+    <value>Guest:</value>
+  </data>
+  <data name="guest_information" xml:space="preserve">
+    <value>Guest information:</value>
+  </data>
+  <data name="host" xml:space="preserve">
+    <value>Host:</value>
+  </data>
+  <data name="host_information" xml:space="preserve">
+    <value>Host information:</value>
+  </data>
+  <data name="licence" xml:space="preserve">
+    <value>Licence</value>
+  </data>
+  <data name="login_to_the_system" xml:space="preserve">
+    <value>LOGIN TO THE SYSTEM</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="make_review" xml:space="preserve">
+    <value>Make review</value>
+  </data>
+  <data name="match" xml:space="preserve">
+    <value>Match</value>
+  </data>
+  <data name="matches" xml:space="preserve">
+    <value>Matches</value>
+  </data>
+  <data name="mentality" xml:space="preserve">
+    <value>Mentality</value>
+  </data>
+  <data name="mentality_description" xml:space="preserve">
+    <value>Mentality description:</value>
+  </data>
+  <data name="mentality_grade" xml:space="preserve">
+    <value>Mentality grade:</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="nationality" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="operations" xml:space="preserve">
+    <value>Operations</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="physique" xml:space="preserve">
+    <value>Physique</value>
+  </data>
+  <data name="physique_description" xml:space="preserve">
+    <value>Physique description:</value>
+  </data>
+  <data name="physique_grade" xml:space="preserve">
+    <value>Physique grade:</value>
+  </data>
+  <data name="registered_scouts" xml:space="preserve">
+    <value>Registered scouts:</value>
+  </data>
+  <data name="reviews" xml:space="preserve">
+    <value>Reviews</value>
+  </data>
+  <data name="review_by" xml:space="preserve">
+    <value>Review made by</value>
+  </data>
+  <data name="scouts" xml:space="preserve">
+    <value>Scouts</value>
+  </data>
+  <data name="serbian" xml:space="preserve">
+    <value>Serbian</value>
+  </data>
+  <data name="stadium" xml:space="preserve">
+    <value>Stadium</value>
+  </data>
+  <data name="stadiumm" xml:space="preserve">
+    <value>Stadium:</value>
+  </data>
+  <data name="surname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="tactics" xml:space="preserve">
+    <value>Tactics</value>
+  </data>
+  <data name="tactics_description" xml:space="preserve">
+    <value>Tactics description:</value>
+  </data>
+  <data name="tactics_grade" xml:space="preserve">
+    <value>Tactics grade:</value>
+  </data>
+  <data name="team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="technique" xml:space="preserve">
+    <value>Technique</value>
+  </data>
+  <data name="technique_description" xml:space="preserve">
+    <value>Technique description:</value>
+  </data>
+  <data name="technique_grade" xml:space="preserve">
+    <value>Technique grade:</value>
+  </data>
+  <data name="theme1" xml:space="preserve">
+    <value>Theme 1</value>
+  </data>
+  <data name="theme2" xml:space="preserve">
+    <value>Theme 2</value>
+  </data>
+  <data name="theme3" xml:space="preserve">
+    <value>Theme 3</value>
+  </data>
+  <data name="ticket price" xml:space="preserve">
+    <value>Ticket price</value>
+  </data>
+  <data name="ticket_pricekm" xml:space="preserve">
+    <value>Ticket price (KM):</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="year_founded" xml:space="preserve">
+    <value>Year founded:</value>
+  </data>
+</root>

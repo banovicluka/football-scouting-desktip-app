@@ -1,0 +1,48 @@
+﻿<Window x:Class="ProjektniZadatakA.AddMatchWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektniZadatakA"
+        xmlns:language="clr-namespace:ProjektniZadatakA.Properties.Langs"    
+        mc:Ignorable="d"
+        Title="AddMatchWin" Height="394" Width="650" Loaded="Window_Loaded">
+    <Grid Background="Gray">
+        <!--<Grid.Background>
+            <ImageBrush ImageSource="C:\Users\WIN10\source\repos\ProjektniZadatakA\ProjektniZadatakA\images\pocetna.png"></ImageBrush>
+        </Grid.Background>-->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+            <StackPanel Orientation="Vertical" Margin="40,40,40,0" >
+                <StackPanel Orientation="Horizontal" Margin="40,40,0,40">
+                    <Label VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.date_of_match}"></Label>
+                    <DatePicker Name="datePicker" Width="135" Background="Gray" BorderBrush="White" Text="Datum utakmice" Margin="5">
+                    </DatePicker>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="40,0,20,40">
+                    <Label VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.ticket_pricekm}"></Label>
+                    <TextBox Name="priceBox" Background="Gray" BorderBrush="White" Margin="5" Width="100" Height="20"></TextBox>
+                </StackPanel>
+                <Button Name="addMatchButton" Margin="160,10,20,5" Width="80" Click="addMatchButton_Click" Content="{x:Static language:Language1.add_match}"></Button>
+                <Label Margin="40,10,0,0"></Label>
+                <TextBlock Name="infoLabel2" TextWrapping="Wrap" Width="180"  Margin="30,0,30,0" Height="50" ></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="0,40,20,0" HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal" Margin="40,40,40,40">
+                    <Label VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.host}"></Label>
+                    <ComboBox Name="hostTeams" Background="Gray" BorderBrush="White" Margin="5" Width="90" Text="Ekipa broj 1"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="40,0,0,0">
+                    <Label VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.guest}"></Label>
+                    <ComboBox Name="guestTeams" Background="Gray" BorderBrush="White" Margin="5" Width="90">Ekipa broj 2</ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="38,40,0,0">
+                    <Label VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.stadiumm}"></Label>
+                    <ComboBox Name="stadiumBox" Background="Gray" BorderBrush="White" Margin="5" Width="90"></ComboBox>
+                </StackPanel>
+
+
+            </StackPanel>
+            <Image Name="addMatchImage"></Image>
+        </StackPanel>
+    </Grid>
+</Window>

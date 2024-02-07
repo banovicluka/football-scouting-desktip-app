@@ -1,0 +1,622 @@
+﻿<Window x:Class="ProjektniZadatakA.SDirectorMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektniZadatakA"
+        mc:Ignorable="d"
+        xmlns:language="clr-namespace:ProjektniZadatakA.Properties.Langs"
+        xmlns:hm="http://schemas.hpod9.com/haley/mvvm"
+        Title="SDirectorMenu" Height="650" Width="953"  Loaded="Window_Loaded" ResizeMode="NoResize" >
+    <Grid Style="{StaticResource GridStyle}">
+        <!--<Grid.Background>
+            <ImageBrush ImageSource="C:\Users\WIN10\source\repos\ProjektniZadatakA\ProjektniZadatakA\images\stadium.jpg"></ImageBrush>
+        </Grid.Background>-->
+        <TabControl Margin="10,10,10,50" Background="Transparent" BorderBrush="Transparent">
+
+            <TabItem Name="scoutsHeader"  Height="50" Width="75" >
+                <TabItem.Header>
+                    <TextBlock Background="Transparent"  FontWeight="Bold" Text="{x:Static language:Language1.scouts}"></TextBlock>
+                </TabItem.Header>
+                <Grid Margin="0,0,0,40" >
+                 
+                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Button x:Name="addScoutButton" Width="100" Height="30" Margin="10" Click="addScoutButton_Click" Content="{x:Static language:Language1.add_scout}"></Button>
+                     </StackPanel>
+
+                    <DataGrid Name="scoutsTable"  Background="Transparent"  IsReadOnly="True" HorizontalGridLinesBrush="Transparent" VerticalGridLinesBrush="Transparent" Margin="0,50,0,45" BorderThickness="0" BorderBrush="Transparent" >
+                    <!--   <DataGrid.RowStyle >
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="Margin" Value="0,0,0,2"></Setter>
+                                <Setter Property="Background" Value="LightBlue"></Setter>
+                                <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                            </Style>
+                        </DataGrid.RowStyle> 
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                
+                                <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                
+                                <Setter Property="Background" Value="DarkBlue"></Setter>
+                                <Setter Property="Foreground" Value="White"></Setter>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle> -->
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn >
+                                <DataGridTemplateColumn.Header>
+                                    <Label Foreground="White" >#</Label>
+                                </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                        <TextBox Text="{Binding id}" IsReadOnly="true" BorderThickness="0" HorizontalContentAlignment="Left" VerticalAlignment="Center" FontSize="13" Background="Transparent" ></TextBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False" Width="*">
+                                <DataGridTemplateColumn.Header>
+                                    <Label Foreground="White" Content="{x:Static language:Language1.name}"></Label>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0" Background="Transparent" Height="30">
+                                            <TextBox Text="{Binding name}" IsReadOnly="True" HorizontalContentAlignment="Left" VerticalAlignment="Center" FontSize="13" BorderBrush="Transparent" Background="Transparent" ></TextBox>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="{x:Static language:Language1.surname}" CanUserResize="False" Width="*">
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0" Background="Transparent" >
+                                            <TextBox Text="{Binding surname}" IsReadOnly="True" HorizontalContentAlignment="Left" VerticalAlignment="Center" FontSize="13" BorderBrush="Transparent" Background="Transparent" ></TextBox>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="{x:Static language:Language1.licence}" CanUserResize="False" Width="*">
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0" Background="Transparent" >
+                                            <TextBox Text="{Binding licence}" IsReadOnly="True" HorizontalContentAlignment="Left" VerticalAlignment="Center" FontSize="13" BorderBrush="Transparent" Background="Transparent" ></TextBox>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="{x:Static language:Language1.username}" CanUserResize="False" Width="*">
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0" Background="Transparent" >
+                                            <TextBox Text="{Binding username}" IsReadOnly="True" HorizontalContentAlignment="Left" VerticalAlignment="Center" FontSize="13"  BorderBrush="Transparent" Background="Transparent" ></TextBox>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="{x:Static language:Language1.city}" CanUserResize="False" Width="*">
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0" Background="Transparent" >
+                                            <TextBox Text="{Binding city.name}" IsReadOnly="True" HorizontalContentAlignment="Left" VerticalAlignment="Center" FontSize="13"  BorderBrush="Transparent" Background="Transparent" ></TextBox>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="{x:Static language:Language1.operations}" CanUserResize="False" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                            <Button Name="deleteScoutButton" Click="deleteScoutButton_Click" Background="Transparent" BorderBrush="Transparent" Height="25" Width="25">
+                                                <Image Source="C:\Users\WIN10\source\repos\ProjektniZadatakA\ProjektniZadatakA\images\trash-bin.png"></Image>
+                                            </Button>
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Name="matchesHeader"  Width="75" Height="50">
+                <TabItem.Header>
+                    <TextBlock Background="Transparent" FontWeight="Bold" Text="{x:Static language:Language1.matches}"></TextBlock>
+                </TabItem.Header>
+                <Grid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Button x:Name="addMatchButt" Width="100" Height="30" Margin="10" Click="addMatchButt_Click" Content="{x:Static language:Language1.add_match}"></Button>
+                    </StackPanel>
+
+                    <DataGrid Name="matches" IsReadOnly="True"  BorderBrush="Transparent" HorizontalGridLinesBrush="Transparent" VerticalGridLinesBrush="Transparent" Margin="0,50,0,45" Background="Transparent">
+                        
+                        <!--<DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="BorderThickness" Value="0,0,0,2"></Setter>
+                                <Setter Property="Background" Value="LightBlue"></Setter>
+                                <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                            </Style>
+                        </DataGrid.RowStyle>
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                
+                                <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                
+                                <Setter Property="Background" Value="DarkBlue"></Setter>
+                                <Setter Property="Foreground" Value="White"></Setter>
+                                
+                            </Style>-->
+                        <!--</DataGrid.ColumnHeaderStyle>-->
+                        <DataGrid.Columns>
+                            
+                            <DataGridTemplateColumn  Width="auto" CanUserResize="False" >
+                                <DataGridTemplateColumn.Header>
+                                    <Label Foreground="White" Content="{x:Static language:Language1.date}"></Label>
+                                </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0"  Height="30">
+                                        <TextBlock Text="{Binding date.Date}"  FontSize="13" Background="Transparent" VerticalAlignment="Center"></TextBlock>
+                                            <TextBlock Text="   "></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn  Width="*" CanUserResize="False">
+                                <DataGridTemplateColumn.Header>
+                                    <Label Foreground="White" Content="{x:Static language:Language1.match}"></Label>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30">
+                                        <Border x:Name="circularBorder" Height="20" BorderThickness="1" Background="{Binding host.jerseyColor}" CornerRadius="{Binding Path=ActualHeight, ElementName=circularBorder}" Width="{Binding Path=ActualHeight, ElementName=circularBorder}">
+                                        </Border>
+                                        <TextBlock Text="  "></TextBlock>
+                                        <TextBlock Text="{Binding host.name}" Height="20" VerticalAlignment="Center" FontSize="13" Background="Transparent"></TextBlock>
+                                        <TextBlock Text=" - " Height="20" VerticalAlignment="Center"></TextBlock>
+                                        <TextBlock Text="{Binding guest.name}" Height="20" VerticalAlignment="Center"></TextBlock>
+                                        <TextBlock Text="  "></TextBlock>
+                                        <Border x:Name="circularBorder2" Height="20" BorderBrush="Black"  Background="{Binding guest.jerseyColor}" CornerRadius="{Binding Path=ActualHeight, ElementName=circularBorder}" Width="{Binding Path=ActualHeight, ElementName=circularBorder}">
+                                        </Border>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  Width="75" CanUserResize="False">
+                                <DataGridTemplateColumn.Header>
+                                    <Label Foreground="White" Content="{x:Static language:Language1.ticket_price}"></Label>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30">
+                                        <TextBlock Text="{Binding ticketPrice}"  FontSize="13" Background="Transparent" VerticalAlignment="Center"></TextBlock>
+                                        <TextBlock Text=" €" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  Width="auto" CanUserResize="False">
+                                <DataGridTemplateColumn.Header>
+                                    <Label Foreground="White" Content="{x:Static language:Language1.stadium}"></Label>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30">
+                                        <TextBlock Text="{Binding stadium.name}"  FontSize="13" Background="Transparent" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  Width="auto" CanUserResize="False">
+                                <DataGridTemplateColumn.Header>
+                                    <Label Foreground="White" Content="{x:Static language:Language1.city}"></Label>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30">
+                                        <TextBlock Text="{Binding stadium.city.name}"  FontSize="13" Background="Transparent" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="auto" CanUserResize="False">
+                                <DataGridTemplateColumn.Header>
+                                    <Label Foreground="White" Content="{x:Static language:Language1.country}"></Label>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30">
+                                        <TextBlock Text="{Binding stadium.city.country}"  FontSize="13" Background="Transparent" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  Width="60" CanUserResize="False">
+                                <DataGridTemplateColumn.Header>
+                                    <Label Foreground="White" Content="{x:Static language:Language1.operations}"></Label>
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0" Height="30">
+                                            <Button Name="deleteMatchButton" Width="25" Height="25" Background="Transparent" BorderBrush="Transparent" Click="deleteMatchButton_Click" >
+                                                <Button.Style>
+                                                    <Style TargetType="Button">
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding ElementName=scoutsHeader, Path=Visibility}" Value="Collapsed">
+                                                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+
+                                                </Button.Style>
+                                                <Image Source="C:\Users\WIN10\source\repos\ProjektniZadatakA\ProjektniZadatakA\images\trash-bin.png"></Image>
+                                            </Button>
+                                            <Button Name="addMeButton" Width="25" Height="25" Background="Transparent" BorderBrush="Transparent" Click="addMeButton_Click">
+                                                <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=scoutsHeader, Path=Visibility}" Value="Visible">
+                                                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                                            </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                               
+                                                </Button.Style>
+                                                <Image Source="C:\Users\WIN10\source\repos\ProjektniZadatakA\ProjektniZadatakA\images\addMe.png"></Image>
+                                            </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                    <DataGrid.RowDetailsTemplate>
+                        <DataTemplate>
+                            <StackPanel Name="stack" Orientation="Horizontal" Background="White">
+                                <StackPanel Orientation="Vertical" Width="auto">
+                                        <Label FontWeight="Bold" FontStyle="Italic" Content="{x:Static language:Language1.host_information}"></Label>
+                                    <StackPanel Orientation="Horizontal" Width="auto" Margin="0,0,200,0">
+                                            <TextBlock Text="{x:Static language:Language1.year_founded}"></TextBlock>
+                                        <TextBlock Text="{Binding host.yearFounded}"></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{x:Static language:Language1.competition}"></TextBlock>
+                                        <TextBlock Text="{Binding host.league.name}"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" Width="auto">
+                                        <Label FontWeight="Bold" FontStyle="Italic"  Content="{x:Static language:Language1.guest_information}"></Label>
+                                    <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{x:Static language:Language1.year_founded}"></TextBlock>
+                                        <TextBlock Text="{Binding guest.yearFounded}"></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Width="auto" >
+                                            <TextBlock Text="{x:Static language:Language1.competition}"></TextBlock>
+                                        <TextBlock Text="{Binding guest.league.name}"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                                    <StackPanel Orientation="Vertical" Width="auto" Margin="200,00,0,0">
+                                        <Label FontWeight="Bold" FontStyle="Italic" Content="{x:Static language:Language1.registered_scouts}"></Label>
+                                    <ListView  Name="scoutsList" IsEnabled="false" BorderBrush="Transparent"  Background="Transparent" ItemsSource="{Binding scouts}">
+                                           <ListView.ItemContainerStyle>
+                                                <Style TargetType="ListViewItem">
+                                                    <Setter Property="Background" Value="Transparent"></Setter>
+                                                </Style>
+                                            </ListView.ItemContainerStyle>
+                                    </ListView>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGrid.RowDetailsTemplate>
+
+                </DataGrid>
+                </Grid>
+            </TabItem>
+            
+            <TabItem Name="playersHeader"  Width="75" Height="50">
+                <TabItem.Header>
+                    <TextBlock Background="Transparent" Foreground="Black" FontWeight="Bold" Text="{x:Static language:Language1.reviews}"></TextBlock>
+                </TabItem.Header>
+                <DataGrid Name="players" IsReadOnly="True" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ColumnWidth="Auto"  Margin="0,10,0,0" VerticalGridLinesBrush="Transparent" HorizontalGridLinesBrush="Transparent" Background="Transparent" BorderBrush="Transparent">
+                    <!--<DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="BorderThickness" Value="0,0,0,2"></Setter>
+                            <Setter Property="Background" Value="LightBlue"></Setter>
+                            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+
+                            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                        </Style>
+                    </DataGrid.CellStyle>
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+
+                            <Setter Property="Background" Value="DarkBlue"></Setter>
+                            <Setter Property="Foreground" Value="White"></Setter>
+
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>-->
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn  CanUserResize="False" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.name}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30" >
+                                        <TextBlock Text="{Binding player.name}"  FontSize="13" Background="Transparent"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.surname}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal"   Height="30">
+                                        <TextBlock Text="{Binding player.surname}"  FontSize="13" Background="Transparent"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.age}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30">
+                                        <TextBlock Text="{Binding player.age}"  FontSize="13" Background="Transparent"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.nationality}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30">
+                                        <TextBlock Text="{Binding player.nationality}"  FontSize="13" Background="Transparent"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.foot}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30">
+                                        <TextBlock Text="{Binding player.foot}"  FontSize="13" Background="Transparent"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.team}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30">
+                                        <TextBlock Text="{Binding player.team.name}"  FontSize="13" Background="Transparent"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.technique}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30" HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding techniqueGrade}"  FontSize="13" Background="Transparent"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.physique}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30" HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding physicsGrade}"  FontSize="13" Background="Transparent"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.tactics}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30" HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding tacticsGrade}"  FontSize="13" Background="Transparent"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.mentality}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30" HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding mentalityGrade}"  FontSize="13" Background="Transparent"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.finaly_grade}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30" HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding finalGrade}"  FontSize="13" Background="Transparent"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn  CanUserResize="False">
+                            <DataGridTemplateColumn.Header>
+                                <Label Foreground="White" Content="{x:Static language:Language1.review_by}"></Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0"  Height="30">
+                                        <TextBlock Text="{Binding scout.name}"  FontSize="13" Background="Transparent"></TextBlock>
+                                        <TextBlock Text=" "></TextBlock>
+                                        <TextBlock Text="{Binding scout.surname}"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                    <DataGrid.RowDetailsTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Background="White">
+                                
+                                <Border BorderBrush="DarkBlue" BorderThickness="0,0,2,0" Width="auto">
+                                    <StackPanel Orientation="Vertical" Width="auto">
+                                        <Label FontWeight="Bold" FontStyle="Italic" Content="{x:Static language:Language1.technique_description}"></Label>
+                                        <TextBlock Text="{Binding techniqueDescription}" Width="170" TextWrapping="Wrap" Margin="3"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border BorderBrush="DarkBlue" Width="auto" BorderThickness="0,0,2,0" >
+                                    <StackPanel Orientation="Vertical" Width="auto">
+                                        <Label FontWeight="Bold" FontStyle="Italic" Content="{x:Static language:Language1.physique_description}"></Label>
+                                        <TextBlock Text="{Binding physicsDescription}" Width="170" TextWrapping="Wrap" Margin="3"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border BorderBrush="DarkBlue" Width="auto" BorderThickness="0,0,2,0">
+                                    <StackPanel Orientation="Vertical" Width="auto">
+                                        <Label FontWeight="Bold" FontStyle="Italic" Content="{x:Static language:Language1.tactics_description}"></Label>
+                                        <TextBlock Text="{Binding tacticsDescription}" Width="170" TextWrapping="Wrap" Margin="3"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border BorderBrush="DarkBlue"  Width="auto" BorderThickness="0,0,2,0">
+                                    <StackPanel Orientation="Vertical" Width="auto">
+                                        <Label FontWeight="Bold" FontStyle="Italic" Content="{x:Static language:Language1.mentality_description}"></Label>
+                                        <TextBlock Text="{Binding mentalityDescription}" Width="170"  TextWrapping="Wrap" Margin="3"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                                <Border BorderBrush="Black" Width="auto">
+                                    <StackPanel Orientation="Vertical" Width="auto">
+                                        <Label FontWeight="Bold" FontStyle="Italic" Content="{x:Static language:Language1.conclusion}"></Label>
+                                        <TextBlock Text="{Binding conclusion}" Width="150"  TextWrapping="Wrap"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGrid.RowDetailsTemplate>
+                </DataGrid>
+            </TabItem>
+            <TabItem Name="makeReviewHeader"  Height="50" Width="120">
+                <TabItem.Header>
+                    <TextBlock Background="Transparent" Foreground="Black" FontWeight="Bold" Text="{x:Static language:Language1.make_review}"></TextBlock>
+                </TabItem.Header>
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Label FontWeight="Bold" Foreground="White" Margin="0,20,0,20" Content="{x:Static language:Language1.name}"></Label>
+                        <TextBox Name="playerNameBox" Width="80" Margin="2,20,20,20"></TextBox>
+                        <Label  FontWeight="Bold" Foreground="White" Margin="0,20,0,20" Content="{x:Static language:Language1.surname}"></Label>
+                        <TextBox Name="playerSurnameBox" Width="80" Margin="2,20,20,20"></TextBox>
+                        <Label FontWeight="Bold" Foreground="White" Margin="0,20,0,20" Content="{x:Static language:Language1.age}"></Label>
+                        <TextBox Name="playerAgeBox" Width="80" Margin="2,20,20,20"></TextBox>
+                        <Label FontWeight="Bold" Foreground="White" Margin="0,20,0,20" Content="{x:Static language:Language1.nationality}"></Label>
+                        <TextBox Name="playerNationalityBox" Width="80" Margin="2,20,20,20"></TextBox>
+                        <Label FontWeight="Bold" Foreground="White" Margin="0,20,0,20" Content="{x:Static language:Language1.foot}"></Label>
+                        <TextBox Name="playerFootBox" Width="80" Margin="2,20,20,20"></TextBox>
+                        <Label FontWeight="Bold" Foreground="White" Margin="0,20,0,20" Content="{x:Static language:Language1.team}"></Label>
+                        <ComboBox Name="teamsBox" Margin="0,20,0,20" Width="80"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <Label FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.technique_description}"></Label>
+                            <TextBox Name="techniqueDescriptionBox" Width="300" Height="100" Margin="0,0,20,0"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Label FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.tactics_description}"></Label>
+                            <TextBox Name="tacticsDescriptionBox" Width="300" Height="100" Margin="0,0,20,0"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="80,0,0,0">
+                            <Label FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.technique_grade}"></Label>
+                            <ComboBox Name="techniqueGrades" Margin="0,0,0,20">
+                            </ComboBox>
+                            <Label FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.tactics_grade}"></Label>
+                            <ComboBox Name="tacticsGrades" Margin="0,0,0,20"></ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <Label FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.physique_description}"></Label>
+                            <TextBox Name="physicsDescriptionBox" Width="300" Height="100" Margin="0,0,20,0"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Label FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.mentality_description}"></Label>
+                            <TextBox Name="mentalityDescriptionBox" Width="300" Height="100" Margin="0,0,20,0"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="80,0,0,0">
+                            <Label FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.physique_grade}"></Label>
+                            <ComboBox Name="physicsGrades" Margin="0,0,0,20">
+                            </ComboBox>
+                            <Label FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.mentality_grade}"></Label>
+                            <ComboBox Name="mentalityGrades" Margin="0,0,0,20"></ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" >
+                        <StackPanel Orientation="Vertical" Margin="160,0,0,0">
+                            <Label FontWeight="Bold" Foreground="White" Content="{x:Static language:Language1.conclusion}"></Label>
+                            <TextBox Name="conclusionBox" Width="300" Height="100" Margin="0,0,0,0"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="5">
+                            <Button Name="addReviewButton" Margin="30,10,0,5" Width="100" Height="20" Click="addReviewButton_Click"  Content="{x:Static language:Language1.complete_review}"></Button>
+                            <TextBlock Name="infoLabel3" TextWrapping="Wrap" Width="200"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="65,0,0,0">
+                            <Label Content="{x:Static language:Language1.finaly_grade}" FontWeight="Bold" Foreground="White"/>
+                            <ComboBox x:Name="finalGrades" Margin="0,0,0,0"/>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                    
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="0,10,50,15" HorizontalAlignment="Right">
+            
+            <StackPanel Orientation="Vertical">
+                <RadioButton x:Name="Theme1" GroupName="modesSelection" Content="{x:Static language:Language1.theme1}" Margin="0,0,0,5" HorizontalAlignment="Center" Checked="Theme1_Checked" ></RadioButton>
+                <RadioButton x:Name="Theme2" GroupName="modesSelection" Content="{x:Static language:Language1.theme2}" Margin="0,0,0,5" HorizontalAlignment="Center" Checked="Theme2_Checked"></RadioButton>
+                <RadioButton x:Name="Theme3" GroupName="modesSelection" Content="{x:Static language:Language1.theme3}" HorizontalAlignment="Center" Checked="Theme3_Checked"></RadioButton>
+
+            </StackPanel>
+            <Button x:Name="logoutButton" Width="70" Height="30" Click="logoutButton_Click" Margin="40,0,0,0" Content="{x:Static language:Language1.logout}"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
